@@ -12,7 +12,7 @@ Rebuild and upgrade of the BlindSpot capstone — an Android app (Flutter) that 
 | Path | Contents | GitHub repo (created in Phase 0) |
 |---|---|---|
 | `app/` | Flutter Android app | `Piyolo/blindspot-app` |
-| `backend/` | FastAPI service (Render + Neon) | `Piyolo/blindspot-backend` |
+| `backend/` | FastAPI service (Render + Neon) | `Piyolo/blindspot-api` |
 | `docs/` | Design spec, implementation plan | `Piyolo/blindspot-workspace` (this repo) |
 
 ## Docs

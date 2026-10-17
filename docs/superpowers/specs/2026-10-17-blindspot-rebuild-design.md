@@ -85,7 +85,7 @@ BlindSpot/                        # ← parent repo "blindspot-workspace" (GitHu
 ├── docs/
 │   └── superpowers/specs/        # this spec + implementation plan + copy deck
 ├── app/                          # ← repo "blindspot-app" (Flutter)
-└── backend/                      # ← repo "blindspot-backend" (FastAPI)
+└── backend/                      # ← repo "blindspot-api" (FastAPI; legacy blindspot-backend repo untouched)
 ```
 
 - Two code repos plus this workspace/docs repo, all pushed to GitHub (`Piyolo`); no secrets in code (secrets live only in Render env vars). Repo visibility confirmed with the user in Phase 0 (default: public).
@@ -352,7 +352,7 @@ On startup: `create_all` (two-table schema; no Alembic). CORS enabled permissive
 - Project `blindspot` (Singapore) already provisioned; branch `main`, db `neondb`, role `neondb_owner`. Connection string stored ONLY in Render env vars + local `.env` (gitignored). Never in repo, never in logs.
 
 ### Render deployment
-- Service: `blindspot-api` (free plan, region **singapore**), runtime python, repo `Piyolo/blindspot-backend` (root = repo root), autoDeploy on.
+- Service: `blindspot-api` (free plan, region **singapore**), runtime python, repo `Piyolo/blindspot-api` (new repo; the legacy `Piyolo/blindspot-backend` repo and its Render service `blindspot` belong to the old app — do not touch), autoDeploy on.
 - Build: `pip install -r requirements.txt` · Start: `uvicorn app.main:app --host 0.0.0.0 --port $PORT`.
 - Env vars: `DATABASE_URL`, `JWT_SECRET` (64-hex random, generated at provisioning), `PYTHON_VERSION=3.13.5`.
 - Managed via Render MCP where available; fallback = dashboard steps documented for the user. Health verified by `GET /api/v1/health` returning 200.
@@ -510,7 +510,7 @@ For every phase: **mas-developer implements → mas-tester verifies → mas-revi
 
 ## 15. Implementation Phases (order locked)
 
-**Phase 0 — Scaffold + assets + deployment pipeline.** Repos (`blindspot-app`, `blindspot-backend`, `blindspot-workspace`) created & pushed; Flutter project compiles with theme + navigation skeleton + ApiClient; assets copied; backend skeleton with `/health` + `/health/db` deployed to Render (`blindspot-api`, Neon wired); debug APK builds.
+**Phase 0 — Scaffold + assets + deployment pipeline.** Repos (`blindspot-app`, `blindspot-api`, `blindspot-workspace`) created & pushed; Flutter project compiles with theme + navigation skeleton + ApiClient; assets copied; backend skeleton with `/health` + `/health/db` deployed to Render (`blindspot-api`, Neon wired); debug APK builds.
 Acceptance: APK installs/runs; live health endpoints 200; repos auto-deploy wired.
 
 **Phase 1 — Auth + offline session.** Backend: models/schemas/security/routers/tests/rate-limit. App: Auth/Profile/Session repos (trios), TokenStore, providers, Welcome/Login/Signup/Permissions/Profile screens, error mapping, cold-start UX, offline cache.
