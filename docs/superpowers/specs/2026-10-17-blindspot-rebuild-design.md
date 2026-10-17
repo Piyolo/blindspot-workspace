@@ -458,7 +458,7 @@ Filipino copy is a first pass — final deck gets a native-speaker review with t
 | camera | 0.12.0+2 | 0.12.1 needs Flutter ≥3.44 — do not upgrade |
 | speech_to_text | 7.4.0 | 7.5.0 needs Flutter ≥3.44 — do not upgrade |
 | flutter_tts | ^4.2.5 | |
-| permission_handler | ^13.0.2 | |
+| permission_handler | ^12.0.3 | Phase 0 Task 1 (verified): 13.x pulls permission_handler_android 14.x whose Kotlin-DSL build script fails to compile under Flutter 3.41.5; 12.0.3 = last Groovy-based android dep |
 | flutter_secure_storage | ^11.2.0 | |
 | shared_preferences | ^2.5.6 | prefer `SharedPreferencesAsync` APIs |
 | provider | ^6.1.5+1 | only state-management lib allowed (conventions) |
