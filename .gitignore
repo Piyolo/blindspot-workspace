@@ -11,3 +11,6 @@ Desktop.ini
 .env
 .env.*
 *.env
+
+# SDD process scratch (never commit)
+.superpowers/
