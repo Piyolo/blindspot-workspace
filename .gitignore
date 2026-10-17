@@ -1,0 +1,13 @@
+# Nested project repos (each has its own remote)
+/app/
+/backend/
+
+# OS cruft
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Local env/secret files (never commit)
+.env
+.env.*
+*.env
