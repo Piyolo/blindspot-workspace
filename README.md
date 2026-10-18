@@ -24,6 +24,7 @@ Rebuild and upgrade of the BlindSpot capstone — an Android app (Flutter) that 
 
 - [x] Design approved — 2026-10-17
 - [ ] Implementation phases 0–6 (see spec §15)
+- Live API: https://blindspot-api-dkch.onrender.com (Render, free plan, Singapore)
 
 ## Notes
 

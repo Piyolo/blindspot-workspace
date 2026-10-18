@@ -542,6 +542,6 @@ sherpa_onnx streaming offline KWS for gap-free listening · refresh-token rotati
 ## 17. Provisioning Status (as of spec date)
 
 - Neon project `blindspot` created (region Singapore; branch `main`; db `neondb`). Pooled connection string stored outside the repo (temp secrets + will live in Render env vars only). Neon API key used for provisioning — **recommended to rotate it in the Neon console once deployment is complete**.
-- Render workspace: `My Workspace` (free). Service will be created in Phase 0.
+- Render workspace: `My Workspace` (free). Render service `blindspot-api` live at https://blindspot-api-dkch.onrender.com — free plan, Singapore (deployed 2026-10-18; `/api/v1/health` → `{"ok":true,"version":"0.1.0"}` and `/api/v1/health/db` → `{"db":"ok"}` verified; `healthCheckPath` could not be set via the Render MCP — documented Phase 0 deviation).
 - GitHub: `Piyolo` (authenticated via `gh` on this machine).
 - Local toolchain: Flutter 3.41.5 / Dart 3.11.3 · Python 3.10.11 · Windows 11. Do **not** run `pub upgrade --major-versions`.
