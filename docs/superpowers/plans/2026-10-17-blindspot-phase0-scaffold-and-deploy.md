@@ -887,10 +887,12 @@ Expected: `{"ok":true,"version":"0.1.0"}`; `{"db":"ok"}`; repo public on `main`.
 
 ## Phase 0 Exit Criteria
 
-- [ ] `flutter analyze` clean and `flutter test` green in `app/` (assets + smoke + ApiClient tests).
-- [ ] `flutter build apk --debug` succeeds; APK at `app/build/app/outputs/flutter-apk/app-debug.apk` (on-device install is user-verified when sideloading later — no device on adb in this environment).
-- [ ] `pytest` green in `backend/` (7 tests) and the live Neon ping printed `neon ping ok`.
-- [ ] `https://<service>.onrender.com/api/v1/health` → `{"ok":true,"version":"0.1.0"}` and `/api/v1/health/db` → `{"db":"ok"}` (verified after cold start).
-- [ ] Three public GitHub repos pushed: `blindspot-app`, `blindspot-api`, `blindspot-workspace`; Render `autoDeploy` on `main`.
-- [ ] No secret value anywhere in any repo, commit, or command output; `.gitignore` files committed in all repos.
-- [ ] mas-reviewer audit of the full Phase 0 diff across all three repos completed with no open critical findings.
+- [x] `flutter analyze` clean and `flutter test` green in `app/` (assets + smoke + ApiClient tests).
+- [x] `flutter build apk --debug` succeeds; APK at `app/build/app/outputs/flutter-apk/app-debug.apk` (on-device install is user-verified when sideloading later — no device on adb in this environment).
+- [x] `pytest` green in `backend/` (7 tests) and the live Neon ping printed `neon ping ok`.
+- [x] `https://<service>.onrender.com/api/v1/health` → `{"ok":true,"version":"0.1.0"}` and `/api/v1/health/db` → `{"db":"ok"}` (verified after cold start).
+- [x] Three public GitHub repos pushed: `blindspot-app`, `blindspot-api`, `blindspot-workspace`; Render `autoDeploy` on `main`.
+- [x] No secret value anywhere in any repo, commit, or command output; `.gitignore` files committed in all repos.
+- [x] mas-reviewer audit of the full Phase 0 diff across all three repos completed with no open critical findings.
+
+**Phase 0 completed 2026-10-18.** Evidence: `.superpowers/sdd/progress.md`, per-task reports/verifications (`task-1..6-*`), review `.superpowers/sdd/phase0-review.md` (APPROVE_WITH_NOTES — 0 critical/high/medium). Live API: https://blindspot-api-dkch.onrender.com.
