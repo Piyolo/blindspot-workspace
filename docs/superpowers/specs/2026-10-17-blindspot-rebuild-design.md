@@ -516,6 +516,8 @@ Acceptance: APK installs/runs; live health endpoints 200; repos auto-deploy wire
 **Phase 1 — Auth + offline session.** Backend: models/schemas/security/routers/tests/rate-limit. App: Auth/Profile/Session repos (trios), TokenStore, providers, Welcome/Login/Signup/Permissions/Profile screens, error mapping, cold-start UX, offline cache.
 Acceptance: signup→login→edit→password change works on live backend; airplane relaunch stays signed in; pytest green; 429/409/401 paths verified.
 
+*Phase-1 clarifications (approved by user 2026-10-18):* Phase 1 ships **no app speech** — screens are TalkBack-usable (semantics labels + `Copy` constants) and `TtsService` remains Phase 2 per the locked order. **Home in Phase 1 is a minimal honest Home** (signed-in status strip + working Profile tile); the remaining tiles appear in the phases that implement them, so no tile is a dead end. Phase-1 UI strings not already in §11 (button/label/dialog copy, limited-mode warning, rate-limit message, "You need internet to change this.") are pinned in the Phase 1 plan (`docs/superpowers/plans/2026-10-18-blindspot-phase1-auth-and-session.md`) and fold into the §11 deck at the Phase 5 copy-deck review. The system status bar is themed dark to match the app surface (from the Phase 0 on-device screenshot).
+
 **Phase 2 — Detection core.** Services per §6.1 + TtsService queue + detection screen + overlay + object list + DetectionProvider; camera permission flow.
 Acceptance: on-device announcement ≤2 s of object appearing, sane distance/direction, overlay aligned, proximity alarm <0.7 m, 10-min soak stable, thermal backoff logged, unit tests green, works in airplane mode.
 
