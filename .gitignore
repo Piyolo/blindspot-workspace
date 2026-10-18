@@ -12,5 +12,8 @@ Desktop.ini
 .env.*
 *.env
 
+# Staged secrets for deploy tooling (never commit)
+.secrets/
+
 # SDD process scratch (never commit)
 .superpowers/
